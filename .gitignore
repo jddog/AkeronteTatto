@@ -1,0 +1,15 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/AkeronteTatto/Aplicaciones/WebAPI/AkeronteTatto.API/bin
+/AkeronteTatto/Aplicaciones/WebAPI/AkeronteTatto.API/obj/Debug
+/AkeronteTatto/Global/AkeronteTatto.DTOs/bin/Debug
+/AkeronteTatto/Global/AkeronteTatto.DTOs/obj/Debug
+/AkeronteTatto/Global/AkeronteTatto.Global/bin/Debug
+/AkeronteTatto/Global/AkeronteTatto.Global/obj/Debug
+/AkeronteTatto/Infraestructura/AkeronteTatto.Infraestructura/bin/Debug
+/AkeronteTatto/Infraestructura/AkeronteTatto.Infraestructura/obj/Debug
+/AkeronteTatto/packages/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+/AkeronteTatto/ServiciosAplicacion/AkeronteTatto.ServiciosAplicacion/bin/Debug
+/AkeronteTatto/ServiciosAplicacion/AkeronteTatto.ServiciosAplicacion/obj/Debug
