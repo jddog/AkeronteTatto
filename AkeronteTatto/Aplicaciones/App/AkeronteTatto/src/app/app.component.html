@@ -1,60 +1,76 @@
 <ion-app>
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>{{ appPages[selectedIndex].title }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-router-outlet class="content"></ion-router-outlet>
-    </ion-content>
+  <div *ngIf="modoWeb">
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>{{ appPages[selectedIndex].title }}</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-router-outlet class="content"></ion-router-outlet>
+      </ion-content>
+    </div>
+
+    <ion-menu side="start" menuId="first" content-id="main-content">
+      <ion-header>
+        <ion-toolbar translucent>
+          <ion-title>Akeronte Tatto</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Bienvenido:</ion-list-header>
+          <ion-note class="NombreUsuarioMenu">Jddog</ion-note>
+        </ion-list>
+        <ion-list>
+          <ion-menu-toggle
+            auto-hide="false"
+            *ngFor="let p of appPages; let i = index"
+          >
+            <ion-item
+              (click)="selectedIndex = i"
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              [class.selected]="selectedIndex == i"
+            >
+              <ion-icon
+                slot="start"
+                [ios]="p.icon + '-outline'"
+                [md]="p.icon + '-sharp'"
+              ></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
   </div>
 
-  <ion-menu side="start" menuId="first" content-id="main-content">
-    <ion-header>
-      <ion-toolbar translucent>
-        <ion-title>Akeronte Tatto</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
-      <ion-list id="inbox-list">
-        <ion-list-header>Bienvenido:</ion-list-header>
-        <ion-note class="NombreUsuarioMenu">Jddog</ion-note>
-      </ion-list>
-      <ion-list>
-        <ion-menu-toggle
-          auto-hide="false"
-          *ngFor="let p of appPages; let i = index"
-        >
-          <ion-item
-            (click)="selectedIndex = i"
-            routerDirection="root"
-            [routerLink]="[p.url]"
-            lines="none"
-            detail="false"
-            [class.selected]="selectedIndex == i"
-          >
-            <ion-icon
-              slot="start"
-              [ios]="p.icon + '-outline'"
-              [md]="p.icon + '-sharp'"
-            ></ion-icon>
-            <ion-label>{{ p.title }}</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
+  <ion-tabs *ngIf="!modoWeb">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button
+        *ngFor="let p of appPages; let i = index"
+        routerLink="{{ p.url }}"
+      >
+        <ion-icon name="{{ p.icon }}"></ion-icon>
+        <ion-label>{{ p.title }}</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
+  <!--
   <div *ngIf="loading" class="loading">
-    <!--<img src="assets/img/icons/logo-desktop.svg" />-->
+    <img src="assets/img/icons/logo-desktop.svg" />
     <div class="spinner mt-3">
       <div class="bounce1"></div>
       <div class="bounce2"></div>
       <div class="bounce3"></div>
     </div>
   </div>
+  -->
 </ion-app>

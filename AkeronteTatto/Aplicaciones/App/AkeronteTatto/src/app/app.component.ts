@@ -1,12 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import {
-  Router,
-  NavigationStart,
-  NavigationEnd,
-  NavigationCancel,
-  NavigationError,
-} from "@angular/router";
-import { MenuController } from "@ionic/angular";
+import { Platform } from "@ionic/angular";
 
 @Component({
   selector: "app-root",
@@ -16,60 +9,40 @@ import { MenuController } from "@ionic/angular";
 export class AppComponent implements OnInit {
   title = "customer-front";
   loading: boolean = false;
+  modoWeb: boolean;
 
   public selectedIndex = 0;
   public appPages = [
     {
       title: "Inicio",
-      url: "/home",
+      url: "home",
       icon: "home",
+      nameTab: "inicio",
     },
     {
-      title: "Outbox",
-      url: "/folder/Outbox",
-      icon: "paper-plane",
+      title: "Artistas",
+      url: "home/artist",
+      icon: "color-palette",
+      nameTab: "artistas",
     },
     {
-      title: "Favorites",
-      url: "/folder/Favorites",
-      icon: "heart",
+      title: "Cotizar",
+      url: "home/request-tatto",
+      icon: "calendar",
+      nameTab: "cotizar",
     },
     {
-      title: "Archived",
-      url: "/folder/Archived",
-      icon: "archive",
-    },
-    {
-      title: "Trash",
-      url: "/folder/Trash",
-      icon: "trash",
-    },
-    {
-      title: "Spam",
-      url: "/folder/Spam",
-      icon: "warning",
+      title: "Perfil",
+      url: "auth",
+      icon: "person-circle",
+      nameTab: "perfil",
     },
   ];
 
-  constructor(private router: Router, private menu: MenuController) {
+  constructor(public plt: Platform) {
     window["version"] = "0.0.6";
+    this.modoWeb = plt.is("desktop");
   }
 
-  ngOnInit(): void {
-    /*this.router.events.subscribe((event) => {
-      switch (true) {
-        case event instanceof NavigationStart:
-          this.loading = true;
-          break;
-
-        case event instanceof NavigationEnd:
-        case event instanceof NavigationCancel:
-        case event instanceof NavigationError:
-          this.loading = false;
-          break;
-        default:
-          break;
-      }
-    });*/
-  }
+  ngOnInit(): void {}
 }

@@ -1,0 +1,50 @@
+<ion-content class="ion-padding">
+  <div class="div-center">
+    <ion-card class="p-2">
+      <ion-card-header class="text-center">
+        <h1>Iniciar Sesion</h1>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon
+                style="zoom: 1.5"
+                name="person-circle-outline"
+              ></ion-icon>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon style="zoom: 1.5" name="key"></ion-icon>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="password"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+      </ion-card-content>
+      <div class="div-center">
+        <ion-button class="w-50" expand="block">Ingresar</ion-button>
+      </div>
+    </ion-card>
+  </div>
+  <div class="div-center">
+    <ion-button expand="block" routerLink="register"
+      >Crear una cuenta</ion-button
+    >
+  </div>
+</ion-content>
