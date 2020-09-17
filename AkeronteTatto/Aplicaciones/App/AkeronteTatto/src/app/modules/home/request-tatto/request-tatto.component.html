@@ -1,1 +1,76 @@
-<p>COTIZAR</p>
+<ion-content class="ion-padding">
+  <div class="div-center p-2">
+    <ion-card class="p-2">
+      <ion-card-header class="text-center">
+        <h2>Cotiza tu tatto</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon style="zoom: 1.5" name="body"></ion-icon>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="¿En que parte del cuerpo?"
+            aria-label="parteCuerpo"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon style="zoom: 1.5" name="swap-vertical"></ion-icon>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="¿Alto del tatto en cm?"
+            aria-label="alturaTatto"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon style="zoom: 1.5" name="swap-horizontal"></ion-icon>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="¿Ancho del tatto en cm?"
+            aria-label="anchoTatto"
+            aria-describedby="basic-addon1"
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <ion-icon style="zoom: 1.5" name="brush"></ion-icon>
+            </span>
+          </div>
+          <ion-select value="byn" class="form-control">
+            <ion-select-option value="byn">Blanco y negro</ion-select-option>
+            <ion-select-option value="col">Color</ion-select-option>
+          </ion-select>
+        </div>
+        <div class="input-group mb-3">
+          <ion-input type="file" accept="image/*" id="upload"></ion-input>
+        </div>
+        <div class="input-group mb-3">
+          <ion-item class="w-100 text-center">
+            <ion-textarea value="" placeholder="¿Alguna observación?">
+            </ion-textarea>
+          </ion-item>
+        </div>
+      </ion-card-content>
+      <div class="div-center">
+        <ion-button class="w-50" expand="block">Cotizar</ion-button>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
