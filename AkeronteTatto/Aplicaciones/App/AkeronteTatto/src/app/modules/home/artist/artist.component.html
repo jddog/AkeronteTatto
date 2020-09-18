@@ -1,1 +1,12 @@
-<p>Artistas</p>
+<ion-toolbar>
+  <ion-title> Galeria </ion-title>
+</ion-toolbar>
+<ion-content padding>
+  <ion-slides>
+    <ion-slide *ngFor="let imagen of imagenes">
+      <div class="slide">
+        <img src="{{ imagen }}" alt="" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

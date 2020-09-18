@@ -47,3 +47,9 @@ h3 {
   font-family: system-ui;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 600px) {
+  .ion-padding {
+    margin-top: 200px;
+  }
+}

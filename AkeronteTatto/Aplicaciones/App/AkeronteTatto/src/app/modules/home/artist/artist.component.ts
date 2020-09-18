@@ -6,9 +6,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./artist.component.scss"],
 })
 export class ArtistComponent implements OnInit {
-  constructor() {
-    console.log("HEREEE");
-  }
+  imagenes = [
+    "../../../../assets/images/galeria/mono/tatto1.jpg",
+    "../../../../assets/images/galeria/mono/tatto2.jpg",
+    "../../../../assets/images/galeria/mono/tatto3.jpg",
+    "../../../../assets/images/galeria/mono/tatto4.jpg",
+    "../../../../assets/images/galeria/mono/tatto5.jpg",
+  ];
+
+  constructor() {}
 
   ngOnInit() {}
 }

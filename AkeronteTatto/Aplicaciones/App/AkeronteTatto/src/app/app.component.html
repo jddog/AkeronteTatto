@@ -13,8 +13,17 @@
         <ion-router-outlet class="content"></ion-router-outlet>
       </ion-content>
       <ion-footer>
-        <ion-toolbar class="d-flex justify-content-center">
-          <ion-title>Contáctanos</ion-title>
+        <ion-toolbar class="text-center">
+          <label class="lblContactenosPC mr-3">Contáctanos</label>
+          <ion-button color="success">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </ion-button>
+          <ion-button color="primary">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+          <ion-button color="danger">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </ion-button>
         </ion-toolbar>
       </ion-footer>
     </div>
@@ -55,6 +64,23 @@
       </ion-content>
     </ion-menu>
   </div>
+
+  <ion-header *ngIf="!modoWeb">
+    <ion-toolbar>
+      <ion-title class="text-left pl-4">Contáctanos</ion-title>
+      <div class="text-right">
+        <ion-button color="success">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-button>
+        <ion-button color="primary">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button color="danger">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-header>
 
   <ion-tabs *ngIf="!modoWeb">
     <ion-tab-bar slot="bottom">
